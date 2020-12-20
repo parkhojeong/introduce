@@ -21,7 +21,6 @@
     </div>
     <div class="body">
       <div class="home">
-        <img src="northern-lights-3242090_1920.jpg" alt="home-image" />
         <div class="text">
           const introduce = <br />{ <br />name : '박호정',<br />birth :
           '1994.06.02', job : 'Soft Engineer',<br />phoneNumber :
@@ -29,6 +28,7 @@
           skill: ['HTML', 'CSS & SCSS', 'JAVASCRIPT', 'VUE', 'PYTHON', 'C']<br />}
         </div>
       </div>
+
       <div class="about">
         <h1 class="title">ABOUT</h1>
         <div class="content">
@@ -50,13 +50,13 @@
               <li class="text">Gimpo, Gyeonggi-do, Republic of Korea</li>
               <li class="text">
                 깃허브:
-                <a href="https://github.com/parkhojeong"
+                <a href="https://github.com/parkhojeong" class="text"
                   >https://github.com/parkhojeong</a
                 >
               </li>
               <li class="text">
                 개인 블로그:
-                <a href="https://bako94.tistory.com"
+                <a href="https://bako94.tistory.com" class="text"
                   >https://bako94.tistory.com</a
                 >
               </li>
@@ -116,7 +116,7 @@
               <span class="text"
                 >파이썬을 사용하여 크롤러를 만들고 딥러닝의 오차역전파를 구현한
                 경험이 있으며 파이썬을 능숙하게 사용할 수 있습니다. 직관적인
-                문법 스타일 떄문에 제일 선호하고 좋아하는 언어입니다.
+                문법 스타일 때문에 제일 선호하고 좋아하는 언어입니다.
               </span>
             </li>
             <li class="GIT & GITHUB">
@@ -157,12 +157,51 @@
     padding: 0;
     list-style: none;
   }
+  @media screen and (max-width: 880px) {
+    .text {
+      font-size: 15px !important;
+    }
+  }
   .flex-center-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
+  /*header*/
+  .header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media screen and (max-width: 480px) {
+    .header {
+      display: none;
+    }
+  }
+  .header .title {
+    margin-left: 30px;
+  }
+  .header .menu {
+    margin-left: auto;
+  }
+  .header .menu ul {
+    height: 100%;
+  }
+  .header .menu li {
+    margin-right: 40px;
+    height: 100%;
+  }
+  .header .text {
+    cursor: pointer;
+  }
+
   /*body*/
   .body {
     display: flex;
@@ -172,33 +211,27 @@
   .body .home {
     position: relative;
     width: 100%;
-    height: 100vh;
-    /* background-color: gray; */
-    display: flex;
-    justify-self: center;
+    height: 90vh;
+    flex-direction: column;
+
+    background-image: url("northern-lights-3242090_1920.jpg");
+    justify-content: center;
     align-items: center;
   }
-  .body .home img {
-    width: 100%;
-    height: 100%;
-  }
+
   .body .home .text {
-    position: absolute;
     z-index: 5;
-    top: 500px;
+    max-width: 80%;
     color: white;
-    font-size: 30px;
-    width: 40%;
+    font-size: 28px;
   }
 
   .body > div {
     width: 70%;
     align-items: center;
     margin: 0 auto;
-    /* background: red; */
     display: flex;
     flex-direction: column;
-    /* padding: 20px; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 50px 0;
   }
@@ -223,6 +256,7 @@
   }
   .body .about .intro img {
     width: 70%;
+    min-width: 130px;
   }
   .body .about .intro .text {
     font-weight: bold;
@@ -243,7 +277,6 @@
 
   .body .skill .skillset > ul > li {
     padding: 30px 40px;
-    /* border: 1px solid rgba(0, 0, 0, 0.3); */
     box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.3);
     margin: 40px auto;
     cursor: pointer;
@@ -254,41 +287,21 @@
     background: rgba(0, 0, 0, 0.05);
     width: 55%;
   }
+  @media screen and (max-width: 480px) {
+    .body .skill .skillset > ul > li {
+      width: 90%;
+    }
+    .body .skill .skillset > ul > li:hover {
+      width: 90%;
+    }
+  }
   .body .skill .skillset > ul > li .text {
     display: block;
     padding: 20px 0;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 1.6;
   }
   .body .skill .skillset ul li h2 {
     margin-top: 20px;
-  }
-
-  /*header*/
-  .header {
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    height: 70px;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    display: flex;
-    flex-direction: row;
-  }
-  .header .title {
-    margin-left: 30px;
-  }
-  .header .menu {
-    margin-left: auto;
-  }
-  .header .menu ul {
-    height: 100%;
-  }
-  .header .menu li {
-    margin-right: 40px;
-    height: 100%;
-  }
-  .header .text {
-    cursor: pointer;
   }
 </style>
