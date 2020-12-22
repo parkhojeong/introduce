@@ -9,13 +9,13 @@
 
   <body>
     <div class="header">
-      <div class="title flex-center-row"><h2 class="text">PARKHOJEONG</h2></div>
+      <div class="title flex-center-row"><h3 class="text">PARKHOJEONG</h2></div>
       <div class="menu">
         <ul class="flex-center-row">
-          <li class="flex-center-row"><h2 class="text">HOME</h2></li>
-          <li class="flex-center-row"><h2 class="text">ABOUT</h2></li>
-          <li class="flex-center-row"><h2 class="text">SKILL</h2></li>
-          <li class="flex-center-row"><h2 class="text">PROJECT</h2></li>
+          <li class="flex-center-row"><h3 class="text">HOME</h2></li>
+          <li class="flex-center-row"><h3 class="text">ABOUT</h2></li>
+          <li class="flex-center-row"><h3 class="text">SKILL</h2></li>
+          <li class="flex-center-row"><h3 class="text">PROJECT</h2></li>
         </ul>
       </div>
     </div>
@@ -156,11 +156,16 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    box-sizing: border-box;
   }
   @media screen and (max-width: 880px) {
     .text {
       font-size: 15px !important;
     }
+  }
+  .text{
+    word-break: keep-all;
+    word-wrap: break-word;
   }
   .flex-center-row {
     display: flex;
@@ -223,7 +228,7 @@
     z-index: 5;
     max-width: 80%;
     color: white;
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .body > div {
@@ -234,6 +239,11 @@
     flex-direction: column;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 50px 0;
+  }
+  @media screen and (max-width: 480px) {
+    .body > div {
+      width: 80%;
+    }
   }
   .body .home {
     padding: 0;
@@ -247,6 +257,11 @@
     display: flex;
     flex-direction: row;
   }
+  @media screen and (max-width: 480px) {
+    .body .about .content {
+      flex-direction: column;
+    }
+  }
   .body .about .intro {
     width: 30%;
     padding: 0 40px;
@@ -254,6 +269,8 @@
     flex-direction: column;
     align-items: center;
   }
+ 
+
   .body .about .intro img {
     width: 70%;
     min-width: 130px;
@@ -267,12 +284,37 @@
     padding: 15px 0;
   }
   .body .about .text {
-    font-size: 20px;
+    font-size: 18px;
+  }
+  @media screen and (max-width: 480px) {
+    .body .about{
+      width: 70%;
+      
+    }
+    .body .about .intro {
+      margin-top: 20px;
+      width: 100%;
+      padding: 0;
+      align-items: center;
+    }
+    .body .about .detail{
+      margin-top: 30px;     
+    }
   }
 
+
+  @media screen and (max-width: 480px) {
+    .body .skill{
+      width: 100%;
+    }
+  }
   .body .skill img {
     width: 100px;
     height: 100px;
+  }
+  .body .skill .skillset,
+  .body .skill .skillset ul {
+    width: 100%;
   }
 
   .body .skill .skillset > ul > li {
@@ -280,25 +322,26 @@
     box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.3);
     margin: 40px auto;
     cursor: pointer;
-    width: 50%;
+    width: 60%;
     transition: all 0.5s;
   }
   .body .skill .skillset > ul > li:hover {
     background: rgba(0, 0, 0, 0.05);
-    width: 55%;
+    width: 65%;
   }
   @media screen and (max-width: 480px) {
     .body .skill .skillset > ul > li {
-      width: 90%;
+      width: 100%;
+      box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.3);
     }
     .body .skill .skillset > ul > li:hover {
-      width: 90%;
+      width: 100%;
     }
   }
   .body .skill .skillset > ul > li .text {
     display: block;
     padding: 20px 0;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.6;
   }
   .body .skill .skillset ul li h2 {
